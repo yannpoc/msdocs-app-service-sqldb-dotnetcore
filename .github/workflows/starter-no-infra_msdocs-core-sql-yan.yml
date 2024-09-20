@@ -25,6 +25,8 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
+        run: dotnet tool install -g dotnet-ef --version 8.*
+        run: dotnet ef migrations bundle --runtime linux-x64 -o ${{env.DOTNET_ROOT}}/myapp/migrationsbundle
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job

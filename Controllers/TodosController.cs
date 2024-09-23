@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Text;
 using DotNetCoreSqlDb.Data;
 using DotNetCoreSqlDb.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace DotNetCoreSqlDb.Controllers
 {
@@ -236,5 +236,5 @@ namespace DotNetCoreSqlDb.Controllers
         {
             return $"{_TodoItemsCacheKey}_{id}";
         }
-     }
+    }
 }
